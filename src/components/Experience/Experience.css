@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ================= EXPERIENCE ================= */
+
+.experience {
+  width: 100%;
+  background: #0a0a0a;
+  padding: 7rem 6%;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ================= EYEBROW ================= */
+
+.sec-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.exp-eyebrow {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.eyebrow-line-w {
+  width: 28px;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+/* ================= HEADING ================= */
+
+.exp-heading {
+  font-family: "Syne", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+.exp-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.38);
+  max-width: 500px;
+  margin-bottom: 3.5rem;
+}
+
+/* ================= TIMELINE ================= */
+
+.exp-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= TIMELINE ITEM ================= */
+
+.exp-item {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.exp-item:last-child {
+  padding-bottom: 0;
+}
+
+.exp-dot {
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 0;
+}
+
+.exp-dot-line {
+  position: absolute;
+  left: -28px;
+  top: 18px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================= ITEM CONTENT ================= */
+
+.exp-period {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.24);
+  margin-bottom: 0.5rem;
+}
+
+.exp-role {
+  font-family: "Syne", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+}
+
+.exp-company {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 0.9rem;
+}
+
+.exp-sep {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.exp-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.36);
+  max-width: 580px;
+  margin-bottom: 1rem;
+}
+
+/* ================= TAGS ================= */
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.exp-tag {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .exp-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience {
+    padding: 5rem 5%;
+  }
+
+  .exp-heading {
+    font-size: 1.85rem;
+  }
+
+  .exp-timeline {
+    padding-left: 22px;
+  }
+
+  .exp-dot {
+    left: -26px;
+  }
+
+  .exp-dot-line {
+    left: -22px;
+  }
+}

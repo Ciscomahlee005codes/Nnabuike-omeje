@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ================= FOOTER ================= */
+
+.footer {
+  width: 100%;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 5rem 6% 2.4rem;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ================= TOP GRID ================= */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ================= BRAND COLUMN ================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.4rem;
+}
+
+.footer-logo-mark {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-logo-mark span {
+  font-family: "Syne", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #000;
+}
+
+.footer-wordmark {
+  font-family: "Syne", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer-tagline {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.3);
+  max-width: 240px;
+  margin-bottom: 1.6rem;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-social {
+  width: 36px;
+  height: 36px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  border-radius: 0;
+}
+
+.footer-social:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* ================= NAV COLUMN ================= */
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.22);
+  margin-bottom: 1.1rem;
+}
+
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-col-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+
+.footer-col-links a::before {
+  content: "";
+  width: 12px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.footer-col-links a:hover {
+  color: #fff;
+}
+
+.footer-col-links a:hover::before {
+  width: 18px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* ================= CTA BOX ================= */
+
+.footer-cta-box {
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem 1.4rem;
+}
+
+.footer-cta-heading {
+  font-family: "Syne", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.45rem;
+}
+
+.footer-cta-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.2rem;
+}
+
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-cta-btn:hover {
+  background: #e0e0e0;
+}
+
+.footer-cta-arr {
+  transition: transform 0.25s ease;
+}
+
+.footer-cta-btn:hover .footer-cta-arr {
+  transform: translateX(3px);
+}
+
+/* ================= BOTTOM BAR ================= */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: footerPulse 2s ease-in-out infinite;
+}
+
+@keyframes footerPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.25); }
+}
+
+.footer-copy {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.03em;
+}
+
+.footer-credit {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.footer-credit a:hover {
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .footer-tagline {
+    max-width: 320px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 4rem 5% 2rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
