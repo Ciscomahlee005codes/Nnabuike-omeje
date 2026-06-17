@@ -11,10 +11,10 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: "ti-brand-linkedin", href: "https://linkedin.com/in/yourusername", label: "LinkedIn"     },
-  { icon: "ti-brand-x",        href: "https://twitter.com/yourusername",     label: "X / Twitter" },
-  { icon: "ti-mail",           href: "mailto:Amarachukwunwokoro@gmail.com",  label: "Email"       },
-  { icon: "ti-brand-instagram",href: "https://instagram.com/yourusername",   label: "Instagram"   },
+  { icon: "ti-brand-linkedin",  href: "https://linkedin.com/in/yourusername", label: "LinkedIn"     },
+  { icon: "ti-brand-x",         href: "https://twitter.com/yourusername",     label: "X / Twitter" },
+  { icon: "ti-mail",            href: "mailto:Amarachukwunwokoro@gmail.com",  label: "Email"       },
+  { icon: "ti-brand-instagram", href: "https://instagram.com/yourusername",   label: "Instagram"   },
 ];
 
 const Footer = () => {
@@ -32,8 +32,8 @@ const Footer = () => {
           </div>
 
           <p className="footer-tagline">
-            Virtual assistant helping businesses stay sharp, organized, and
-            stress-free.
+            Content writer crafting clear, compelling copy that informs,
+            engages, and drives results.
           </p>
 
           <div className="footer-socials">

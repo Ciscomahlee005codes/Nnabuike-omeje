@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
 
+/* ── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --navy:        #0B1F3A;
+  --navy-mid:    #132847;
+  --navy-light:  #1C3558;
+  --orange:      #F4600C;
+  --orange-dark: #D44F08;
+  --white:       #FFFFFF;
+  --off-white:   #FDF8F4;
+  --muted:       rgba(255, 255, 255, 0.55);
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -13,15 +25,15 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  transition: 0.35s ease;
+  transition: background 0.35s ease, height 0.35s ease, box-shadow 0.35s ease;
 }
 
 .navbar-scrolled {
   height: 68px;
-  background: rgba(8, 8, 8, 0.9);
+  background: rgba(11, 31, 58, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(244, 96, 12, 0.18);
 }
 
 /* ================= LOGO ================= */
@@ -37,29 +49,21 @@
 .logo-mark {
   width: 34px;
   height: 34px;
-  background: #000;
+  background: var(--orange);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .logo-mark span {
   font-family: "Syne", sans-serif;
   font-size: 14px;
   font-weight: 800;
-  color: #fff;
+  color: var(--white);
   letter-spacing: -0.5px;
-}
-
-.navbar-scrolled .logo-mark {
-  background: #fff;
-}
-
-.navbar-scrolled .logo-mark span {
-  color: #000;
 }
 
 .logo-text {
@@ -67,13 +71,13 @@
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 3px;
-  color: #111;
+  color: var(--navy);
   text-transform: uppercase;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .navbar-scrolled .logo-text {
-  color: #fff;
+  color: var(--white);
 }
 
 /* ================= DESKTOP NAV LINKS ================= */
@@ -88,16 +92,16 @@
   font-family: "Inter", sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #111;
+  color: var(--navy);
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   position: relative;
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .navbar-scrolled .nav-links a {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
 }
 
 .nav-links a::after {
@@ -107,8 +111,8 @@
   left: 0;
   width: 0%;
   height: 1.5px;
-  background: currentColor;
-  transition: 0.3s ease;
+  background: var(--orange);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
@@ -116,23 +120,23 @@
 }
 
 .nav-links a:hover {
-  color: #000;
+  color: var(--orange);
 }
 
 .navbar-scrolled .nav-links a:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 /* ================= CONTACT BUTTON ================= */
 
 .contact-btn {
-  background: #111 !important;
-  color: #fff !important;
+  background: var(--orange) !important;
+  color: var(--white) !important;
   padding: 0.6rem 1.4rem !important;
   border-radius: 3px !important;
   font-size: 0.75rem !important;
   letter-spacing: 0.12em !important;
-  transition: 0.3s ease !important;
+  transition: background 0.3s ease, transform 0.2s ease !important;
 }
 
 .contact-btn::after {
@@ -140,19 +144,18 @@
 }
 
 .contact-btn:hover {
-  background: #333 !important;
-  transform: translateY(-2px);
-  color: #fff !important;
+  background: var(--orange-dark) !important;
+  transform: translateY(-2px) !important;
+  color: var(--white) !important;
 }
 
 .navbar-scrolled .contact-btn {
-  background: #fff !important;
-  color: #000 !important;
+  background: var(--orange) !important;
+  color: var(--white) !important;
 }
 
 .navbar-scrolled .contact-btn:hover {
-  background: #e0e0e0 !important;
-  color: #000 !important;
+  background: var(--orange-dark) !important;
 }
 
 /* ================= HAMBURGER / CLOSE ================= */
@@ -166,7 +169,7 @@
   cursor: pointer;
   padding: 4px;
   position: relative;
-  z-index: 2000; /* always above drawer (1500) and overlay (1400) */
+  z-index: 2000;
   width: 26px;
   height: 26px;
 }
@@ -175,19 +178,17 @@
   display: block;
   width: 24px;
   height: 1.5px;
-  background: #111;
+  background: var(--navy);
   transition: transform 0.3s ease, opacity 0.25s ease, background 0.3s ease;
   transform-origin: center;
 }
 
 .navbar-scrolled .menu-icon span {
-  background: #fff;
+  background: var(--white);
 }
 
-/* When the drawer is open, the icon sits over a dark drawer/overlay,
-   so force it white and turn it into a sharp X (close button) */
 .menu-icon.open span {
-  background: #fff;
+  background: var(--white);
 }
 
 .menu-icon.open span:nth-child(1) {
@@ -213,18 +214,16 @@
   right: -100%;
   width: 270px;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--navy);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
   padding: 0 2.5rem;
-  transition: 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+  transition: right 0.45s cubic-bezier(0.77, 0, 0.18, 1);
   z-index: 1500;
-  border-left: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-left: 1px solid rgba(244, 96, 12, 0.3);
 }
 
 .mobile-drawer.open {
@@ -235,20 +234,24 @@
   font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
   text-decoration: none;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .mobile-drawer a:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 .mobile-drawer .contact-btn {
-  background: #fff !important;
-  color: #000 !important;
+  background: var(--orange) !important;
+  color: var(--white) !important;
+}
+
+.mobile-drawer .contact-btn:hover {
+  background: var(--orange-dark) !important;
 }
 
 /* ================= OVERLAY ================= */
@@ -256,7 +259,7 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(11, 31, 58, 0.6);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   z-index: 1400;

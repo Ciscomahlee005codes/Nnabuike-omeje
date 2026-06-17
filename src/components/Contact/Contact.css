@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap");
 
+/* ================= TOKENS ================= */
+
+:root {
+  --navy:   #0f1e3c;
+  --orange: #f97316;
+  --off-white: #f5f4f0;
+}
+
 /* ================= CONTACT ================= */
 
 .contact {
   width: 100%;
-  background: #f5f4f0;
+  background: var(--off-white);
   padding: 7rem 6%;
   overflow: hidden;
 }
@@ -30,7 +38,7 @@
 .eyebrow-line-dark {
   width: 28px;
   height: 1.5px;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--orange);
   flex-shrink: 0;
 }
 
@@ -46,7 +54,7 @@
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: #0a0a0a;
+  color: var(--navy);
   margin-bottom: 0.8rem;
   max-width: 420px;
 }
@@ -76,13 +84,14 @@
 }
 
 .contact-info {
-  background: #f5f4f0;
+  background: var(--off-white);
   padding: 1.6rem 1.4rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.07);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-left 0.2s ease;
+  border-left: 2px solid transparent;
 }
 
 .contact-info:last-child {
@@ -91,6 +100,7 @@
 
 .contact-info:hover {
   background: #ebebeb;
+  border-left-color: var(--orange);
 }
 
 .contact-info-icon {
@@ -101,8 +111,15 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  color: #111;
+  color: var(--orange);
   flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-info:hover .contact-info-icon {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
 }
 
 .contact-info-label {
@@ -129,14 +146,14 @@
 }
 
 .contact-info-value.link:hover {
-  color: #444;
+  color: var(--orange);
 }
 
 /* ================= RIGHT — FORM ================= */
 
 .contact-form-wrap {
   flex: 1;
-  background: #0a0a0a;
+  background: var(--navy);
   padding: 2.6rem 2.4rem;
 }
 
@@ -199,7 +216,7 @@
 }
 
 .form-input:focus {
-  border-bottom-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--orange);
 }
 
 .form-textarea {
@@ -213,8 +230,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: #000;
+  background: var(--orange);
+  color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -229,7 +246,7 @@
 }
 
 .form-submit:hover {
-  background: #e0e0e0;
+  background: #ea6c0a;
   transform: translateY(-2px);
 }
 

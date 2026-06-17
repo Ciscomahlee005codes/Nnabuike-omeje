@@ -7,35 +7,35 @@ const education = [
     icon: "ti-school",
     degree: "SSCE",
     school: "Sacred Heart Seminary, Nsude",
-    desc: "Majored in Management with a focus on organisational behaviour, business communication, and office administration. Graduated with second-class upper honours.",
+    desc: "Developed early writing discipline and a love for language through an intensive humanities curriculum, with strong performance in English Language, Literature in English, and Christian Religious Studies.",
   },
-   {
+  {
     year: "2018",
-    icon: "ti-school",
+    icon: "ti-language",
     degree: "Latin Diploma",
     school: "Pontificia Universitas Urbaniana, Rome",
-    desc: "Majored in Management with a focus on organisational behaviour, business communication, and office administration. Graduated with second-class upper honours.",
+    desc: "Studied classical Latin with an emphasis on rhetoric, textual analysis, and formal written expression — a foundation that sharpened precision, structure, and the art of persuasive writing.",
   },
   {
-    year: "2022-2026",
-    icon: "ti-device-laptop",
+    year: "2022 — 2026",
+    icon: "ti-book",
     degree: "Bachelor of Arts",
     school: "Bigard Memorial Seminary, Enugu",
-    desc: "Completed an intensive programme covering remote work tools, client communication, project management, and digital productivity systems used by top VAs globally.",
+    desc: "Pursuing a broad arts degree that deepens critical thinking, cultural literacy, and written communication — core competencies that inform nuanced, audience-aware content creation.",
   },
   {
-    year: "2022-2026",
-    icon: "ti-device-laptop",
+    year: "2022 — 2026",
+    icon: "ti-atom",
     degree: "Bachelor of Philosophy",
     school: "Pontificia Universitas Urbaniana, Rome",
-    desc: "Completed an intensive programme covering remote work tools, client communication, project management, and digital productivity systems used by top VAs globally.",
+    desc: "Engaging with philosophical reasoning, ethics, and argumentation — skills that translate directly into crafting content with clarity of thought, logical structure, and compelling narrative depth.",
   },
 ];
 
 const certifications = [
-  { icon: "ti-rosette", name: "Google Workspace Admin",    org: "Google · 2022"          },
-  { icon: "ti-rosette", name: "Project Mgmt Essentials",  org: "Coursera · 2022"         },
-  { icon: "ti-rosette", name: "Customer Success",         org: "HubSpot Academy · 2023"  },
+  { icon: "ti-rosette", name: "Content Marketing Certified",  org: "HubSpot Academy · 2023"     },
+  { icon: "ti-rosette", name: "SEO Writing Fundamentals",     org: "Semrush Academy · 2023"      },
+  { icon: "ti-rosette", name: "Digital Storytelling",         org: "Coursera · 2024"             },
 ];
 
 const Education = () => {
@@ -47,14 +47,14 @@ const Education = () => {
       </div>
       <h2 className="edu-heading">Academic background</h2>
       <p className="edu-sub">
-        A strong foundation in business communication and administration,
-        sharpened through professional practice.
+        A rich academic journey rooted in language, philosophy, and the humanities —
+        the bedrock of thoughtful, purposeful content.
       </p>
 
       {/* Degree cards */}
       <div className="edu-grid">
         {education.map((e) => (
-          <div className="edu-card" key={e.degree}>
+          <div className="edu-card" key={e.degree + e.school}>
             <div className="edu-year">{e.year}</div>
             <div className="edu-icon" aria-hidden="true">
               <i className={`ti ${e.icon}`}></i>
@@ -66,7 +66,7 @@ const Education = () => {
         ))}
       </div>
 
-      {/* Certifications row */}
+      {/* Certifications */}
       <div className="edu-certs">
         {certifications.map((c) => (
           <div className="edu-cert" key={c.name}>

@@ -6,9 +6,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Sam from "../../assets/omeje-2.jpeg";
 
 const roles = [
-  "Virtual Assistant",
-  "Administrative Support Specialist",
-  "Customer Support Expert",
+  "Content Writer",
+  "Author",
+  "Content Creator",
 ];
 
 const Hero = () => {
@@ -90,7 +90,7 @@ const Hero = () => {
       {/* RIGHT */}
       <div className="hero-right">
         <div className="hero-corner-label">
-          Content<br />Writer<br />Portfolio
+          Content Writer<br />Portfolio
         </div>
 
         <div className="hero-image-wrapper">

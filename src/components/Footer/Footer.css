@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap");
 
+/* ================= TOKENS ================= */
+
+:root {
+  --navy:   #0f1e3c;
+  --orange: #f97316;
+}
+
 /* ================= FOOTER ================= */
 
 .footer {
   width: 100%;
-  background: #0a0a0a;
+  background: var(--navy);
   color: #fff;
   padding: 5rem 6% 2.4rem;
   border-top: 0.5px solid rgba(255, 255, 255, 0.06);
@@ -37,7 +44,7 @@
 .footer-logo-mark {
   width: 32px;
   height: 32px;
-  background: #fff;
+  background: var(--orange);
   clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
   display: flex;
   align-items: center;
@@ -49,7 +56,7 @@
   font-family: "Syne", sans-serif;
   font-size: 13px;
   font-weight: 800;
-  color: #000;
+  color: #fff;
 }
 
 .footer-wordmark {
@@ -92,9 +99,9 @@
 }
 
 .footer-social:hover {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
 }
 
 /* ================= NAV COLUMN ================= */
@@ -141,18 +148,18 @@
 }
 
 .footer-col-links a:hover {
-  color: #fff;
+  color: var(--orange);
 }
 
 .footer-col-links a:hover::before {
   width: 18px;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--orange);
 }
 
 /* ================= CTA BOX ================= */
 
 .footer-cta-box {
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border: 0.5px solid rgba(249, 115, 22, 0.25);
   padding: 1.6rem 1.4rem;
 }
 
@@ -176,8 +183,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #fff;
-  color: #000;
+  background: var(--orange);
+  color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
@@ -190,7 +197,7 @@
 }
 
 .footer-cta-btn:hover {
-  background: #e0e0e0;
+  background: #ea6c0a;
 }
 
 .footer-cta-arr {
@@ -259,7 +266,7 @@
 }
 
 .footer-credit a:hover {
-  color: #fff;
+  color: var(--orange);
 }
 
 /* ================= RESPONSIVE ================= */

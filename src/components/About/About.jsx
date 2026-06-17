@@ -4,31 +4,31 @@ import Sam from "../../assets/omeje-1.jpeg";
 
 const cards = [
   {
-    icon: "ti-checklist",
-    title: "Task Management",
-    desc: "Keeping workflows organized and productive.",
+    icon: "ti-pencil",
+    title: "Content Writing",
+    desc: "Crafting clear, compelling copy that resonates with audiences and drives engagement across platforms.",
   },
   {
-    icon: "ti-headset",
-    title: "Client Support",
-    desc: "Professional communication and customer care.",
+    icon: "ti-brand-instagram",
+    title: "Content Creation",
+    desc: "Producing scroll-stopping digital content — from social media posts to long-form articles and blogs.",
   },
   {
-    icon: "ti-calendar-event",
-    title: "Scheduling",
-    desc: "Managing appointments and meetings efficiently.",
+    icon: "ti-chart-line",
+    title: "Brand Storytelling",
+    desc: "Building cohesive brand narratives that connect emotionally and grow loyal, engaged communities.",
   },
   {
-    icon: "ti-mail-opened",
-    title: "Email Handling",
-    desc: "Inbox organization and fast response management.",
+    icon: "ti-search",
+    title: "SEO Writing",
+    desc: "Optimising content for discoverability without sacrificing voice, readability, or creative quality.",
   },
 ];
 
 const stats = [
-  { num: "5+", label: "Years exp." },
-  { num: "100+", label: "Clients served" },
-  { num: "100%", label: "Satisfaction" },
+  { num: "3+",   label: "Years writing" },
+  { num: "50+",  label: "Brands served" },
+  { num: "100%", label: "Original content" },
 ];
 
 const About = () => {
@@ -39,7 +39,7 @@ const About = () => {
         {/* LEFT — Image */}
         <div className="about-img-col">
           <div className="about-img-frame">
-            <img src={Sam} alt="Nwokoro Amarachi Mary-Cynthia" />
+            <img src={Sam} alt="Omeje Samuel Nnabuike" />
           </div>
           <div className="about-stat-row">
             {stats.map((s) => (
@@ -58,17 +58,20 @@ const About = () => {
             About me
           </div>
 
-          <h2 className="about-heading">Your reliable virtual assistant</h2>
+          <h2 className="about-heading">
+            Words that <span className="accent">move</span> people.
+          </h2>
 
           <p className="about-intro">
-            I help busy entrepreneurs, startups, and growing businesses stay
-            organized, productive, and stress-free — by handling the daily tasks
-            that slow them down.
+            I am a content writer and creator who turns ideas into stories that
+            stick — helping brands find their voice, connect with their audience,
+            and stand out in a crowded digital landscape.
           </p>
           <p className="about-body">
-            From calendar management and customer support to email handling and
-            administrative assistance, I bring professionalism, efficiency, and
-            attention to detail into every project.
+            From punchy social media captions and SEO-optimised blog posts to
+            long-form articles and brand narratives, I bring intention and craft
+            to every piece I produce. Good content isn't just about words — it's
+            about the right words, in the right tone, for the right people.
           </p>
 
           <div className="about-divider"></div>

@@ -8,6 +8,8 @@ const phases = [
   { from: 78, to: 100, label: "Almost ready",         delay: 55  },
 ];
 
+const BAR_HEIGHTS = [14, 22, 34, 42, 34, 22, 14];
+
 const Loader = ({ onComplete }) => {
   const [pct, setPct]       = useState(0);
   const [status, setStatus] = useState("Initializing");
@@ -15,8 +17,8 @@ const Loader = ({ onComplete }) => {
 
   useEffect(() => {
     let cancelled = false;
-    let phaseIdx = 0;
-    let current  = 0;
+    let phaseIdx  = 0;
+    let current   = 0;
 
     const tick = () => {
       if (cancelled) return;
@@ -34,11 +36,12 @@ const Loader = ({ onComplete }) => {
         if (phaseIdx < phases.length) {
           setTimeout(tick, 200);
         } else {
-          // done — wait, then fade out
           setTimeout(() => {
             if (!cancelled) {
               setHiding(true);
-              setTimeout(() => { if (!cancelled && onComplete) onComplete(); }, 700);
+              setTimeout(() => {
+                if (!cancelled && onComplete) onComplete();
+              }, 700);
             }
           }, 400);
         }
@@ -50,11 +53,12 @@ const Loader = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className={`loader-root ${hiding ? "loader-hide" : ""}`}>
-      {/* Grid background */}
+    <div className={`loader-root${hiding ? " loader-hide" : ""}`}>
+
+      {/* Orange-tinted grid */}
       <div className="loader-grid" aria-hidden="true"></div>
 
-      {/* Scan line */}
+      {/* Orange scan line */}
       <div className="loader-scan" aria-hidden="true"></div>
 
       {/* Corner accents */}
@@ -66,7 +70,7 @@ const Loader = ({ onComplete }) => {
       {/* Center content */}
       <div className="loader-center">
 
-        {/* Logo */}
+        {/* Logo — orange mark, clip-path reveal */}
         <div className="loader-logo">
           <div className="loader-logo-mark">
             <span>C</span>
@@ -74,36 +78,37 @@ const Loader = ({ onComplete }) => {
           <div className="loader-logo-text">Cardinal</div>
         </div>
 
-        {/* Audio bars */}
+        {/* Orange audio bars */}
         <div className="loader-bars" aria-hidden="true">
-          {[14, 22, 32, 40, 32, 22, 14].map((h, i) => (
+          {BAR_HEIGHTS.map((h, i) => (
             <div
               key={i}
               className="loader-bar"
-              style={{ height: h, animationDelay: `${i * 0.1}s` }}
-            ></div>
+              style={{
+                height: h,
+                animationDelay: `${i * 0.11}s`,
+              }}
+            />
           ))}
         </div>
 
         {/* Progress */}
         <div className="loader-progress">
           <div className="loader-track">
-            <div
-              className="loader-fill"
-              style={{ width: `${pct}%` }}
-            ></div>
+            <div className="loader-fill" style={{ width: `${pct}%` }} />
           </div>
           <div className="loader-meta">
             <span>Loading</span>
-            <span>{pct}%</span>
+            <span className="loader-meta-pct">{pct}%</span>
           </div>
         </div>
 
-        {/* Status label */}
+        {/* Status */}
         <div className="loader-status" aria-live="polite">
-          Virtual Assistant Portfolio —{" "}
+          Content Writer Portfolio —{" "}
           <span className="loader-status-phase">{status}</span>
         </div>
+
       </div>
     </div>
   );

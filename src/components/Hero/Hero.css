@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
 
+/* ── Tokens (mirror Navbar.css) ────────────────────────────────────────────── */
+:root {
+  --navy:        #0B1F3A;
+  --navy-mid:    #132847;
+  --navy-light:  #1C3558;
+  --orange:      #F4600C;
+  --orange-dark: #D44F08;
+  --white:       #FFFFFF;
+  --off-white:   #FDF8F4;
+  --muted:       rgba(255, 255, 255, 0.55);
+}
+
 /* ================= HERO ================= */
 
 .hero {
@@ -7,7 +19,7 @@
   min-height: 100vh;
   display: flex;
   overflow: hidden;
-  padding-top: 76px; /* matches navbar height */
+  padding-top: 76px;
 }
 
 /* ================= LEFT SIDE ================= */
@@ -15,13 +27,25 @@
 .hero-left {
   width: 52%;
   min-height: calc(100vh - 76px);
-  background: #f5f4f0;
+  background: var(--off-white);
   display: flex;
   align-items: center;
   padding: 5% 5% 5% 7%;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   position: relative;
   z-index: 2;
+}
+
+/* Vertical orange rule — the signature detail */
+.hero-left::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  height: 76%;
+  width: 3px;
+  background: var(--orange);
+  border-radius: 0 2px 2px 0;
 }
 
 .hero-content {
@@ -34,8 +58,8 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: #111;
-  color: #fff;
+  background: var(--navy);
+  color: var(--white);
   font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
@@ -49,9 +73,14 @@
 .hero-tag-dot {
   width: 5px;
   height: 5px;
-  background: #fff;
+  background: var(--orange);
   border-radius: 50%;
-  opacity: 0.6;
+  animation: pulse-tag 2s infinite;
+}
+
+@keyframes pulse-tag {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.3); }
 }
 
 /* ================= NAME ================= */
@@ -61,9 +90,14 @@
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.08;
-  color: #0a0a0a;
+  color: var(--navy);
   letter-spacing: -0.02em;
   margin-bottom: 1.2rem;
+}
+
+/* Accent the last name segment with orange */
+.hero-name .accent {
+  color: var(--orange);
 }
 
 /* ================= TYPEWRITER ROLE ================= */
@@ -72,7 +106,7 @@
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #555;
+  color: #4A6080;
   letter-spacing: 0.04em;
   min-height: 28px;
   margin-bottom: 1.4rem;
@@ -84,7 +118,7 @@
   display: inline-block;
   width: 2px;
   height: 1em;
-  background: #111;
+  background: var(--orange);
   margin-left: 2px;
   vertical-align: middle;
   animation: blink 1s step-end infinite;
@@ -92,7 +126,7 @@
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50%       { opacity: 0; }
 }
 
 /* ================= DIVIDER ================= */
@@ -100,7 +134,7 @@
 .hero-divider {
   width: 40px;
   height: 2px;
-  background: #111;
+  background: var(--orange);
   margin-bottom: 1.6rem;
 }
 
@@ -110,7 +144,7 @@
   font-family: "Inter", sans-serif;
   font-size: 0.88rem;
   line-height: 1.8;
-  color: #666;
+  color: #4A6080;
   max-width: 400px;
   margin-bottom: 2.2rem;
 }
@@ -126,21 +160,22 @@
 .social-icons a {
   width: 44px;
   height: 44px;
-  border: 0.5px solid #ccc;
+  border: 1px solid rgba(11, 31, 58, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111;
+  color: var(--navy);
   text-decoration: none;
   font-size: 1.05rem;
   border-radius: 3px;
-  transition: 0.3s ease;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              color 0.25s ease, transform 0.25s ease;
 }
 
 .social-icons a:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
   transform: translateY(-3px);
 }
 
@@ -148,7 +183,7 @@
 
 .hero-right {
   flex: 1;
-  background: #0a0a0a;
+  background: var(--navy);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,15 +192,31 @@
   overflow: hidden;
 }
 
-/* GRID OVERLAY */
+/* Subtle dot grid overlay */
 .hero-right::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Orange diagonal slash accent — the hero's signature mark */
+.hero-right::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(244, 96, 12, 0.22);
+  transform: rotate(20deg);
+  border-radius: 4px;
   pointer-events: none;
 }
 
@@ -178,11 +229,23 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   text-align: right;
   line-height: 1.8;
   pointer-events: none;
+}
+
+/* Orange bracket accent beside label */
+.hero-corner-label::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: rgba(244, 96, 12, 0.4);
+  border-radius: 1px;
 }
 
 /* IMAGE */
@@ -199,14 +262,16 @@
 .hero-image-wrapper img {
   width: 100%;
   height: auto;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   object-fit: contain;
-  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
   animation: floatImage 5s ease-in-out infinite;
 }
 
 @keyframes floatImage {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  50%       { transform: translateY(-12px); }
 }
 
 /* SCROLL CUE */
@@ -219,7 +284,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.25);
   font-family: "Inter", sans-serif;
   font-size: 0.58rem;
   letter-spacing: 0.18em;
@@ -229,21 +294,19 @@
 .hero-scroll-line {
   width: 1px;
   height: 28px;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to bottom, var(--orange), transparent);
   animation: scrollPulse 1.8s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
-  0%, 100% { transform: scaleY(1); opacity: 0.3; }
-  50% { transform: scaleY(0.5); opacity: 0.7; }
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50%       { transform: scaleY(0.5); opacity: 0.9; }
 }
 
 /* ================= LARGE TABLET ================= */
 
 @media (max-width: 1100px) {
-  .hero-name {
-    font-size: 2.4rem;
-  }
+  .hero-name { font-size: 2.4rem; }
 }
 
 /* ================= TABLET ================= */
@@ -260,19 +323,19 @@
     padding: 4rem 8% 4rem;
   }
 
+  .hero-left::before {
+    display: none;
+  }
+
   .hero-right {
     width: 100%;
     min-height: 55vh;
     margin-left: 0;
   }
 
-  .hero-name {
-    font-size: 2.2rem;
-  }
+  .hero-name { font-size: 2.2rem; }
 
-  .hero-image-wrapper {
-    width: 50%;
-  }
+  .hero-image-wrapper { width: 50%; }
 }
 
 /* ================= MOBILE ================= */
@@ -282,17 +345,9 @@
     padding: 3rem 6% 3.5rem;
   }
 
-  .hero-name {
-    font-size: 1.9rem;
-  }
-
-  .hero-role {
-    font-size: 0.85rem;
-  }
-
-  .hero-description {
-    font-size: 0.85rem;
-  }
+  .hero-name        { font-size: 1.9rem; }
+  .hero-role        { font-size: 0.85rem; }
+  .hero-description { font-size: 0.85rem; }
 
   .social-icons a {
     width: 40px;
@@ -312,7 +367,5 @@
     min-height: calc(100vh - 76px);
   }
 
-  .hero-name {
-    font-size: 1.75rem;
-  }
+  .hero-name { font-size: 1.75rem; }
 }

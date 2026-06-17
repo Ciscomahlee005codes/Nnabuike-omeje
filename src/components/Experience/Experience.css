@@ -4,25 +4,13 @@
 
 .experience {
   width: 100%;
-  background: #0a0a0a;
+  background: var(--navy);
   padding: 7rem 6%;
-  color: #fff;
+  color: var(--white);
   overflow: hidden;
 }
 
 /* ================= EYEBROW ================= */
-
-.sec-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 1.1rem;
-}
 
 .exp-eyebrow {
   color: rgba(255, 255, 255, 0.3);
@@ -31,7 +19,7 @@
 .eyebrow-line-w {
   width: 28px;
   height: 1.5px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--orange);
   flex-shrink: 0;
 }
 
@@ -43,7 +31,7 @@
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 0.7rem;
 }
 
@@ -70,7 +58,7 @@
   top: 6px;
   bottom: 0;
   width: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(244, 96, 12, 0.2);
 }
 
 /* ================= TIMELINE ITEM ================= */
@@ -84,15 +72,17 @@
   padding-bottom: 0;
 }
 
+/* Orange diamond dot */
 .exp-dot {
   position: absolute;
   left: -32px;
   top: 5px;
   width: 9px;
   height: 9px;
-  background: #fff;
+  background: var(--orange);
   transform: rotate(45deg);
   border-radius: 0;
+  box-shadow: 0 0 10px rgba(244, 96, 12, 0.5);
 }
 
 .exp-dot-line {
@@ -101,7 +91,7 @@
   top: 18px;
   bottom: 0;
   width: 1px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(244, 96, 12, 0.08);
 }
 
 /* ================= ITEM CONTENT ================= */
@@ -112,7 +102,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.24);
+  color: var(--orange);
   margin-bottom: 0.5rem;
 }
 
@@ -120,7 +110,7 @@
   font-family: "Syne", sans-serif;
   font-size: 1.15rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--white);
   letter-spacing: -0.01em;
   margin-bottom: 0.3rem;
 }
@@ -141,16 +131,17 @@
 .exp-sep {
   width: 3px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--orange);
   border-radius: 50%;
   flex-shrink: 0;
+  opacity: 0.5;
 }
 
 .exp-desc {
   font-family: "Inter", sans-serif;
   font-size: 0.82rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.4);
   max-width: 580px;
   margin-bottom: 1rem;
 }
@@ -169,38 +160,27 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.32);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: var(--orange);
+  border: 0.5px solid rgba(244, 96, 12, 0.3);
   padding: 0.3rem 0.7rem;
   border-radius: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.exp-tag:hover {
+  background: rgba(244, 96, 12, 0.1);
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
-  .exp-heading {
-    font-size: 2.2rem;
-  }
+  .exp-heading { font-size: 2.2rem; }
 }
 
 @media (max-width: 600px) {
-  .experience {
-    padding: 5rem 5%;
-  }
-
-  .exp-heading {
-    font-size: 1.85rem;
-  }
-
-  .exp-timeline {
-    padding-left: 22px;
-  }
-
-  .exp-dot {
-    left: -26px;
-  }
-
-  .exp-dot-line {
-    left: -22px;
-  }
+  .experience  { padding: 5rem 5%; }
+  .exp-heading { font-size: 1.85rem; }
+  .exp-timeline { padding-left: 22px; }
+  .exp-dot     { left: -26px; }
+  .exp-dot-line { left: -22px; }
 }

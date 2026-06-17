@@ -4,33 +4,21 @@
 
 .skills {
   width: 100%;
-  background: #f5f4f0;
+  background: var(--off-white);
   padding: 7rem 6%;
   overflow: hidden;
 }
 
-/* ================= EYEBROW (light bg version) ================= */
-
-.sec-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 1.2rem;
-}
+/* ================= EYEBROW ================= */
 
 .skills-eyebrow {
-  color: rgba(0, 0, 0, 0.35);
+  color: rgba(11, 31, 58, 0.35);
 }
 
 .sec-eyebrow-line-dark {
   width: 28px;
   height: 1.5px;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--orange);
   flex-shrink: 0;
 }
 
@@ -46,7 +34,7 @@
   font-weight: 800;
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: #0a0a0a;
+  color: var(--navy);
   margin-bottom: 0.9rem;
   max-width: 400px;
 }
@@ -55,7 +43,7 @@
   font-family: "Inter", sans-serif;
   font-size: 0.88rem;
   line-height: 1.8;
-  color: #666;
+  color: #6A7F99;
   max-width: 480px;
 }
 
@@ -94,27 +82,43 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #111;
+  color: var(--navy);
 }
 
 .skill-pct {
   font-family: "Syne", sans-serif;
   font-size: 1rem;
   font-weight: 800;
-  color: #111;
+  color: var(--orange);
 }
 
 .skill-track {
   width: 100%;
   height: 2px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(11, 31, 58, 0.1);
+  position: relative;
 }
 
 .skill-fill {
   height: 100%;
-  background: #111;
+  background: var(--orange);
   width: 0;
   transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+/* Glowing tip on the bar */
+.skill-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(244, 96, 12, 0.7);
 }
 
 /* ================= TOOL GRID ================= */
@@ -124,23 +128,40 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(11, 31, 58, 0.1);
 }
 
 .tool-card {
-  background: #f5f4f0;
+  background: var(--off-white);
   padding: 1.6rem 1.4rem;
   transition: background 0.25s ease;
   cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.35s ease;
 }
 
 .tool-card:hover {
-  background: #ebebeb;
+  background: #f0ece6;
+}
+
+.tool-card:hover::before {
+  width: 100%;
 }
 
 .tool-icon {
   font-size: 22px;
-  color: #111;
+  color: var(--orange);
   margin-bottom: 0.8rem;
   display: block;
 }
@@ -151,51 +172,31 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #111;
+  color: var(--navy);
   margin-bottom: 0.3rem;
 }
 
 .tool-desc {
   font-family: "Inter", sans-serif;
   font-size: 0.72rem;
-  color: #888;
+  color: #6A7F99;
   line-height: 1.5;
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
-  .skills-layout {
-    gap: 3.5rem;
-  }
-
-  .skills-heading {
-    font-size: 2.2rem;
-  }
+  .skills-layout  { gap: 3.5rem; }
+  .skills-heading { font-size: 2.2rem; }
 }
 
 @media (max-width: 900px) {
-  .skills-layout {
-    flex-direction: column;
-  }
-
-  .skills-left,
-  .skills-right {
-    width: 100%;
-    flex: none;
-  }
+  .skills-layout { flex-direction: column; }
+  .skills-left, .skills-right { width: 100%; flex: none; }
 }
 
 @media (max-width: 600px) {
-  .skills {
-    padding: 5rem 5%;
-  }
-
-  .skills-heading {
-    font-size: 1.85rem;
-  }
-
-  .skills-right {
-    grid-template-columns: 1fr;
-  }
+  .skills         { padding: 5rem 5%; }
+  .skills-heading { font-size: 1.85rem; }
+  .skills-right   { grid-template-columns: 1fr; }
 }
