@@ -21,6 +21,12 @@ const BackToTop = () => {
       aria-label="Back to top"
     >
       <span className="btt-tooltip">Back to top</span>
+
+      {/* Animated ring */}
+      <svg className="btt-ring" viewBox="0 0 52 52" aria-hidden="true">
+        <circle cx="26" cy="26" r="23" />
+      </svg>
+
       <div className="btt-arrow" aria-hidden="true">
         <div className="btt-chevron"></div>
         <div className="btt-line"></div>
