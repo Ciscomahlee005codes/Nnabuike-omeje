@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
-import { MdEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 import Sam from "../../assets/omeje-2.jpeg";
 
 const roles = [
@@ -74,14 +75,17 @@ const Hero = () => {
 </p>
 
           <div className="social-icons">
-            <a href="mailto:Amarachukwunwokoro@gmail.com" title="Email">
-              <MdEmail />
+            <a href="https://wa.link/d2lvcz" title="Whatsapp">
+              <FaWhatsapp />
             </a>
-            <a href="https://twitter.com/yourusername" title="X / Twitter">
+            <a href="https://www.instagram.com/maazinnabuikeomejeacademy?igsh=MTJycW52bW4zeWQwMA%3D%3D&utm_source=qr" title="Instagram">
+              <FaInstagram />
+            </a>
+            <a href="https://x.com/maazinnabuike?s=11" title="X / Twitter">
               <FaXTwitter />
             </a>
-            <a href="https://linkedin.com/in/yourusername" title="LinkedIn">
-              <FaLinkedinIn />
+            <a href="https://www.facebook.com/share/1977jBhC3s/?mibextid=wwXIfr" title="Facebook">
+              <FaFacebookF />
             </a>
           </div>
         </div>

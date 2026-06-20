@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ================= CLIENT SOCIALS ================= */
+
+.client-socials {
+  width: 100%;
+  background: var(--navy);
+  padding: 7rem 6%;
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* ================= EYEBROW ================= */
+
+.cs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.1rem;
+}
+
+.cs-eyebrow-line {
+  width: 28px;
+  height: 1.5px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+/* ================= HEADER ================= */
+
+.cs-header {
+  margin-bottom: 3.5rem;
+  max-width: 560px;
+}
+
+.cs-heading {
+  font-family: "Syne", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+
+.cs-heading .accent {
+  color: var(--orange);
+}
+
+.cs-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ================= GRID ================= */
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(244, 96, 12, 0.12);
+  border: 0.5px solid rgba(244, 96, 12, 0.12);
+}
+
+/* ================= CARD ================= */
+
+.cs-card {
+  background: var(--navy-mid);
+  padding: 1.8rem 1.6rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s ease;
+}
+
+.cs-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.35s ease;
+}
+
+.cs-card:hover {
+  background: var(--navy-light);
+}
+
+.cs-card:hover::before {
+  width: 100%;
+}
+
+/* ── Card top row: platform icon + external arrow ── */
+.cs-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cs-platform-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Platform-specific tints */
+.cs-platform-icon.instagram { background: rgba(244, 96, 12, 0.14); color: var(--orange); }
+.cs-platform-icon.x         { background: rgba(255, 255, 255, 0.08); color: var(--white); }
+.cs-platform-icon.tiktok    { background: rgba(255, 255, 255, 0.08); color: var(--white); }
+.cs-platform-icon.youtube   { background: rgba(244, 96, 12, 0.14); color: var(--orange); }
+.cs-platform-icon.facebook  { background: rgba(255, 255, 255, 0.08); color: var(--white); }
+
+.cs-ext-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.cs-card:hover .cs-ext-arrow {
+  transform: translate(3px, -3px);
+  color: var(--orange);
+}
+
+/* ── Client identity ── */
+.cs-client-name {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.cs-client-niche {
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Handle row ── */
+.cs-handle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cs-platform-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+/* ── Stats footer ── */
+.cs-card-stats {
+  display: flex;
+  gap: 1.4rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+  margin-top: auto;
+}
+
+.cs-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-stat-num {
+  font-family: "Syne", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.cs-stat-lbl {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .cs-heading { font-size: 2.2rem; }
+}
+
+@media (max-width: 900px) {
+  .cs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .client-socials { padding: 5rem 5%; }
+  .cs-heading      { font-size: 1.85rem; }
+  .cs-grid         { grid-template-columns: 1fr; }
+}

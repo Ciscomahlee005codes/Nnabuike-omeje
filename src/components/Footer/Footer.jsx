@@ -11,10 +11,11 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: "ti-brand-linkedin",  href: "https://linkedin.com/in/yourusername", label: "LinkedIn"     },
-  { icon: "ti-brand-x",         href: "https://twitter.com/yourusername",     label: "X / Twitter" },
-  { icon: "ti-mail",            href: "mailto:Amarachukwunwokoro@gmail.com",  label: "Email"       },
-  { icon: "ti-brand-instagram", href: "https://instagram.com/yourusername",   label: "Instagram"   },
+  { icon: "ti-brand-facebook",  href: "https://www.facebook.com/share/1977jBhC3s/?mibextid=wwXIfr", label: "Facebook"     },
+  { icon: "ti-brand-x",         href: "https://x.com/maazinnabuike?s=11",     label: "X / Twitter" },
+  { icon: "ti-mail",            href: "mailto:omejennabuikesamuel@gmail.com",  label: "Email"       },
+  { icon: "ti-brand-instagram", href: "https://www.instagram.com/maazinnabuikeomejeacademy?igsh=MTJycW52bW4zeWQwMA%3D%3D&utm_source=qr",   label: "Instagram"   },
+   { icon: "ti-brand-tiktok", href: "https://www.tiktok.com/@maazinnabuike?_r=1&_t=ZN-97EaprXgzcE",   label: "Tiktok"   },
 ];
 
 const Footer = () => {

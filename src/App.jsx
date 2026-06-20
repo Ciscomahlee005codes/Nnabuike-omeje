@@ -11,6 +11,7 @@ import Skills from "./components/Skills/Skills";
 import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import BackToTop from "./components/BackToTop/BackToTop";
+import ClientSocials from "./components/Clientsocials/Clientsocials";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -36,6 +37,7 @@ function App() {
           <Skills />
           <Portfolio />
           <Contact />
+          <ClientSocials />
           <Footer />
           <BackToTop />
         </>

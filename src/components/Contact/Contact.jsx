@@ -5,8 +5,8 @@ const contactInfo = [
   {
     icon: "ti-mail",
     label: "Email",
-    value: "example@gmail.com",
-    href: "mailto:Amarachukwunwokoro@gmail.com",
+    value: "omejennabuikesamuel@gmail.com",
+    href: "mailto:omejennabuikesamuel@gmail.com",
   },
   {
     icon: "ti-phone",
@@ -17,14 +17,14 @@ const contactInfo = [
   {
     icon: "ti-map-pin",
     label: "Location",
-    value: "Lagos, Nigeria",
+    value: "Enugu, Nigeria",
     href: null,
   },
   {
-    icon: "ti-brand-linkedin",
+    icon: "ti-brand-x",
     label: "LinkedIn",
-    value: "linkedin.com/in/amarachi",
-    href: "https://linkedin.com/in/yourusername",
+    value: "Nnabuike Omeje",
+    href: "https://x.com/maazinnabuike?s=11",
   },
 ];
 
