@@ -1,5 +1,5 @@
 import React from "react";
-import "./ClientSocials.css";
+import "./Clientsocials.css";
 
 /**
  * Update this array with your real handles + links.
@@ -46,7 +46,7 @@ const platformMeta = {
   facebook:  { label: "Facebook",  icon: "ti-brand-facebook"  },
 };
 
-const ClientSocials = () => {
+const Clientsocials = () => {
   return (
     <section className="client-socials" id="client-socials">
       <div className="cs-eyebrow">
@@ -96,4 +96,4 @@ const ClientSocials = () => {
   );
 };
 
-export default ClientSocials;
+export default Clientsocials;
