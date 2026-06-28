@@ -166,7 +166,8 @@
 
 .about-intro {
   font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-style: italic;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1rem;
@@ -178,7 +179,7 @@
   font-size: 0.88rem;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.4);
-  max-width: 440px;
+  max-width: 640px;
 }
 
 .about-divider {
@@ -286,7 +287,63 @@
 .about-btn:hover .about-btn-arr {
   transform: translateX(4px);
 }
+/* ================= ACTION BUTTONS ================= */
 
+.about-actions{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* Base */
+
+.about-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:.9rem 1.7rem;
+    font-family:"Inter",sans-serif;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.about-btn i{
+    font-size:16px;
+}
+
+/* Primary */
+
+.about-btn-primary{
+    background:var(--orange);
+    color:var(--white);
+    border:1px solid var(--orange);
+}
+
+.about-btn-primary:hover{
+    background:var(--orange-dark);
+    border-color:var(--orange-dark);
+    transform:translateY(-3px);
+}
+
+/* Secondary */
+
+.about-btn-secondary{
+    background:transparent;
+    color:var(--white);
+    border:1px solid rgba(255,255,255,.18);
+}
+
+.about-btn-secondary:hover{
+    background:rgba(255,255,255,.05);
+    border-color:var(--orange);
+    color:var(--orange);
+    transform:translateY(-3px);
+}
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {

@@ -83,6 +83,7 @@
   position: relative;
   overflow: hidden;
   transition: background 0.25s ease;
+  font-family: "Syne", sans-serif !important;
 }
 
 .cs-card::before {

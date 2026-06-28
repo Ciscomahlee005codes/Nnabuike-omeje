@@ -21,21 +21,33 @@ const education = [
     icon: "ti-book",
     degree: "Bachelor of Arts",
     school: "Bigard Memorial Seminary, Enugu",
-    desc: "Pursuing a broad arts degree that deepens critical thinking, cultural literacy, and written communication — core competencies that inform nuanced, audience-aware content creation.",
+    desc: "His humanities degree broadened his intellectual foundation, cultivating expertise in communication, history, culture, literature, and the social sciences. This dual academic formation — combining the rigour of philosophy with the breadth of the humanities — defines the interdisciplinary character of his intellectual output.",
   },
   {
     year: "2022 — 2026",
     icon: "ti-atom",
     degree: "Bachelor of Philosophy",
     school: "Pontificia Universitas Urbaniana, Rome",
-    desc: "Engaging with philosophical reasoning, ethics, and argumentation — skills that translate directly into crafting content with clarity of thought, logical structure, and compelling narrative depth.",
+    desc: "Omeje’s philosophical formation at one of Nigeria’s most prestigious ecclesiastical institutions equipped him with advanced competencies in formal logic, ethics, metaphysics, epistemology, philosophy of the human person, and the philosophy of social realities. This training sharpened his capacity for critical analysis, structured argumentation, and the examination of foundational questions about existence, knowledge, and justice — skills that permeate all dimensions of his professional work.",
   },
 ];
 
 const certifications = [
-  { icon: "ti-rosette", name: "Content Marketing Certified",  org: "HubSpot Academy · 2023"     },
-  { icon: "ti-rosette", name: "SEO Writing Fundamentals",     org: "Semrush Academy · 2023"      },
-  { icon: "ti-rosette", name: "Digital Storytelling",         org: "Coursera · 2024"             },
+  {
+    icon: "ti-school",
+    name: "Bachelor of Philosophy (B.Phil.)",
+    org: "Bigard Memorial Seminary · Pontifical Urban University (Affiliated) · 2026",
+  },
+  {
+    icon: "ti-school",
+    name: "Bachelor of Arts (B.A.)",
+    org: "Bigard Memorial Seminary · University of Ibadan (Affiliated) · 2026",
+  },
+  {
+    icon: "ti-award",
+    name: "Latin Diploma",
+    org: "Sacred Heart Seminary, Nsude · 2018",
+  },
 ];
 
 const Education = () => {

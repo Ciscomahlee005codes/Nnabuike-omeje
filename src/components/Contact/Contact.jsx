@@ -48,16 +48,20 @@ const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="contact-header">
-        <div className="sec-eyebrow contact-eyebrow">
-          <span className="eyebrow-line-dark"></span>
-          Contact
-        </div>
-        <h2 className="contact-heading">Let's work together</h2>
-        <p className="contact-sub">
-          Have a project, business task, or support role you need help with?
-          Reach out and let's create something productive together.
-        </p>
-      </div>
+  <div className="sec-eyebrow contact-eyebrow">
+    <span className="eyebrow-line-dark"></span>
+    Contact
+  </div>
+
+  <h2 className="contact-heading">Let's Connect</h2>
+
+  <p className="contact-sub">
+    Whether you're interested in publishing, thought leadership, speaking
+    engagements, strategic collaboration, or meaningful conversations on
+    philosophy, governance, and African development, I'd be delighted to hear
+    from you.
+  </p>
+</div>
 
       <div className="contact-layout">
         {/* LEFT — Info */}

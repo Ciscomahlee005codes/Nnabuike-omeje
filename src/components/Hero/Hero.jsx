@@ -8,8 +8,12 @@ import Sam from "../../assets/omeje-2.jpeg";
 
 const roles = [
   "Content Writer",
-  "Author",
+  "Author & Publisher",
   "Content Creator",
+  "Digital Entrepreneur ",
+   "Philosopher ",
+   "Political Analyst",
+   "Social Justice Advocate"
 ];
 
 const Hero = () => {
@@ -69,9 +73,7 @@ const Hero = () => {
           <div className="hero-divider"></div>
 
            <p className="hero-description">
-  Content Writer &amp; Content Creator crafting engaging stories,
-  compelling content, and impactful digital experiences that help
-  brands connect with their audience and grow their presence.
+   Rooted in a deep conviction that knowledge is the most transformative force available to humanity, Omeje has committed his career to inspiring intellectual growth, empowering individuals and communities, and promoting responsible leadership across Africa and beyond. His approach is simultaneously visionary and pragmatic — guided by the belief that ideas must not only be conceived but rigorously developed, effectively communicated, and purposefully applied.
 </p>
 
           <div className="social-icons">

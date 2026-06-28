@@ -2,20 +2,44 @@ import React, { useEffect, useRef } from "react";
 import "./Skills.css";
 
 const skills = [
-  { name: "Content Writing & Copywriting", pct: 95 },
-  { name: "SEO & Keyword Strategy",        pct: 88 },
-  { name: "Brand Storytelling",            pct: 92 },
-  { name: "Social Media Content",          pct: 90 },
-  { name: "Research & Fact-checking",      pct: 87 },
+  { name: "Philosophical Analysis & Critical Thinking", pct: 98 },
+  { name: "Academic & Professional Writing",            pct: 96 },
+  { name: "Book Publishing & Author Coaching",          pct: 94 },
+  { name: "Political Analysis & Public Policy",         pct: 92 },
+  { name: "Digital Strategy & Personal Branding",       pct: 90 },
 ];
 
 const tools = [
-  { icon: "ti-brand-google",    name: "Google Docs",      desc: "Long-form drafting & collaboration"   },
-  { icon: "ti-world",           name: "WordPress",         desc: "Publishing & on-page SEO"             },
-  { icon: "ti-brand-notion",    name: "Notion",            desc: "Editorial calendars & planning"       },
-  { icon: "ti-chart-bar",       name: "Semrush",           desc: "Keyword research & SEO audits"        },
-  { icon: "ti-writing",         name: "Grammarly",         desc: "Proofreading & style refinement"      },
-  { icon: "ti-brand-instagram", name: "Social Platforms",  desc: "Instagram, X, LinkedIn & more"        },
+  {
+    icon: "ti-book",
+    name: "Amazon Kindle Direct Publishing",
+    desc: "Global book publishing and digital distribution",
+  },
+  {
+    icon: "ti-book-2",
+    name: "Kobo Writing Life",
+    desc: "International self-publishing platform",
+  },
+  {
+    icon: "ti-pencil",
+    name: "Editorial Strategy",
+    desc: "Manuscript development and professional editing",
+  },
+  {
+    icon: "ti-bulb",
+    name: "Thought Leadership",
+    desc: "Knowledge creation and intellectual communication",
+  },
+  {
+    icon: "ti-world",
+    name: "Digital Branding",
+    desc: "Building influential personal and professional brands",
+  },
+  {
+    icon: "ti-users",
+    name: "Leadership & Mentorship",
+    desc: "Coaching authors, entrepreneurs, and emerging leaders",
+  },
 ];
 
 const Skills = () => {
@@ -48,10 +72,11 @@ const Skills = () => {
           <span className="sec-eyebrow-line-dark"></span>
           My skills
         </div>
-        <h2 className="skills-heading">Craft &amp; expertise</h2>
+        <h2 className="skills-heading">Skills &amp; Core Competencies</h2>
         <p className="skills-sub">
-          From concept to published piece — the writing skills and creative tools
-          I use to help brands communicate with clarity and impact.
+           Combining philosophy, publishing, political analysis, and digital
+  entrepreneurship to create ideas that inspire, educate, and drive meaningful
+  social impact.
         </p>
       </div>
 

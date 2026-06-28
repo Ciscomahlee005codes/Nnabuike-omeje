@@ -4,31 +4,40 @@ import Sam from "../../assets/omeje-1.jpeg";
 
 const cards = [
   {
-    icon: "ti-pencil",
-    title: "Content Writing",
-    desc: "Crafting clear, compelling copy that resonates with audiences and drives engagement across platforms.",
+    icon: "ti-book",
+    title: "Author & Publisher",
+    desc: "Publishing impactful books and guiding aspiring authors through every stage of the publishing journey, from manuscript development to global distribution.",
   },
   {
-    icon: "ti-brand-instagram",
-    title: "Content Creation",
-    desc: "Producing scroll-stopping digital content — from social media posts to long-form articles and blogs.",
+    icon: "ti-bulb",
+    title: "Philosophical Thought",
+    desc: "Applying critical thinking, ethical reasoning, and intellectual inquiry to address complex societal, leadership, and human development challenges.",
   },
   {
-    icon: "ti-chart-line",
-    title: "Brand Storytelling",
-    desc: "Building cohesive brand narratives that connect emotionally and grow loyal, engaged communities.",
+    icon: "ti-scale",
+    title: "Political Analysis",
+    desc: "Providing insightful perspectives on governance, democracy, public policy, and ethical leadership with a strong focus on African development.",
   },
   {
-    icon: "ti-search",
-    title: "SEO Writing",
-    desc: "Optimising content for discoverability without sacrificing voice, readability, or creative quality.",
+    icon: "ti-world",
+    title: "Digital Strategy",
+    desc: "Helping individuals and organisations build influential digital brands through publishing, content strategy, and knowledge-driven entrepreneurship.",
   },
 ];
 
 const stats = [
-  { num: "3+",   label: "Years writing" },
-  { num: "50+",  label: "Brands served" },
-  { num: "100%", label: "Original content" },
+  {
+    num: "50+",
+    label: "Published Works & Digital Publications",
+  },
+  {
+    num: "5+",
+    label: "Professional Disciplines",
+  },
+  {
+    num: "2026",
+    label: "Bachelor of Philosophy",
+  },
 ];
 
 const About = () => {
@@ -63,15 +72,11 @@ const About = () => {
           </h2>
 
           <p className="about-intro">
-            I am a content writer and creator who turns ideas into stories that
-            stick — helping brands find their voice, connect with their audience,
-            and stand out in a crowded digital landscape.
+            “Hope for the best — and be ready for the worst.”
           </p>
           <p className="about-body">
-            From punchy social media captions and SEO-optimised blog posts to
-            long-form articles and brand narratives, I bring intention and craft
-            to every piece I produce. Good content isn't just about words — it's
-            about the right words, in the right tone, for the right people.
+            Nnabuike Omeje is a Nigerian philosopher, author, publisher, political analyst, and digital entrepreneur whose work spans the domains of intellectual inquiry, knowledge creation, social advocacy, and innovation-driven enterprise. Born on 8 September 2000 in Obimo, Nsukka Local Government Area of Enugu State, Nigeria, he has built a multidisciplinary profile that bridges rigorous academic training in philosophy and the humanities with practical engagement in publishing, digital strategy, and public discourse.
+Rooted in a deep conviction that knowledge is the most transformative force available to humanity, Omeje has committed his career to inspiring intellectual growth, empowering individuals and communities, and promoting responsible leadership across Africa and beyond. His approach is simultaneously visionary and pragmatic — guided by the belief that ideas must not only be conceived but rigorously developed, effectively communicated, and purposefully applied.
           </p>
 
           <div className="about-divider"></div>
@@ -88,9 +93,22 @@ const About = () => {
             ))}
           </div>
 
-          <a href="#contact" className="about-btn">
-            Let's work together <span className="about-btn-arr">→</span>
-          </a>
+          <div className="about-actions">
+  <a
+    href="Nnabuike-Omeje-CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="about-btn about-btn-primary"
+  >
+    <i className="ti ti-file-text"></i>
+    View Curriculum Vitae
+  </a>
+
+  <a href="#contact" className="about-btn about-btn-secondary">
+    <i className="ti ti-message-circle"></i>
+    Get In Touch
+  </a>
+</div>
         </div>
       </div>
     </section>
