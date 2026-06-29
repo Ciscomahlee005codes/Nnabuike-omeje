@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import Reveal from "../Reveal/Reveal";
 
 const navLinks = [
   { label: "Home",       href: "#home"       },
@@ -20,7 +21,8 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="footer">
+     <Reveal>
+       <footer className="footer">
       <div className="footer-top">
 
         {/* BRAND */}
@@ -104,6 +106,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
+     </Reveal>
   );
 };
 

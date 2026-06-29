@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import Sam from "../../assets/omeje-1.jpeg";
+import Reveal from "../Reveal/Reveal";
 
 const cards = [
   {
@@ -42,7 +43,8 @@ const stats = [
 
 const About = () => {
   return (
-    <section className="about" id="about">
+    <Reveal>
+      <section className="about" id="about">
       <div className="about-layout">
 
         {/* LEFT — Image */}
@@ -112,6 +114,7 @@ Rooted in a deep conviction that knowledge is the most transformative force avai
         </div>
       </div>
     </section>
+    </Reveal>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Skills.css";
+import Reveal from "../Reveal/Reveal";
 
 const skills = [
   { name: "Philosophical Analysis & Critical Thinking", pct: 98 },
@@ -66,7 +67,8 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="skills" id="skills">
+    <Reveal>
+       <section className="skills" id="skills">
       <div className="skills-header">
         <div className="sec-eyebrow skills-eyebrow">
           <span className="sec-eyebrow-line-dark"></span>
@@ -112,6 +114,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
+    </Reveal>
   );
 };
 

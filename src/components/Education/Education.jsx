@@ -1,5 +1,6 @@
 import React from "react";
 import "./Education.css";
+import Reveal from "../Reveal/Reveal";
 
 const education = [
   {
@@ -52,7 +53,8 @@ const certifications = [
 
 const Education = () => {
   return (
-    <section className="education" id="education">
+    <Reveal>
+       <section className="education" id="education">
       <div className="sec-eyebrow edu-eyebrow">
         <span className="eyebrow-line-d"></span>
         Education
@@ -93,6 +95,7 @@ const Education = () => {
         ))}
       </div>
     </section>
+    </Reveal>
   );
 };
 

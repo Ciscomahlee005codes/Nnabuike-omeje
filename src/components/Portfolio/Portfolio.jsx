@@ -4,6 +4,7 @@ import Flyer2 from "../../assets/sam-flyer2.jpeg"
 import Flyer3 from "../../assets/sam-flyer3.jpeg"
 import Flyer4 from "../../assets/omeje-2.jpeg"
 import "./Portfolio.css";
+import Reveal from "../Reveal/Reveal";
 
 const projects = [
   {
@@ -60,7 +61,8 @@ const Portfolio = () => {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="portfolio" id="portfolio">
+     <Reveal>
+      <section className="portfolio" id="portfolio">
       <div className="portfolio-header">
         <div className="sec-eyebrow portfolio-eyebrow">
           <span className="eyebrow-line"></span>
@@ -130,6 +132,7 @@ const Portfolio = () => {
         ))}
       </div>
     </section>
+     </Reveal>
   );
 };
 

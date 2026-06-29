@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import Reveal from "../Reveal/Reveal";
 
 const contactInfo = [
   {
@@ -46,7 +47,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact" id="contact">
+     <Reveal>
+       <section className="contact" id="contact">
       <div className="contact-header">
   <div className="sec-eyebrow contact-eyebrow">
     <span className="eyebrow-line-dark"></span>
@@ -151,6 +153,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+     </Reveal>
   );
 };
 

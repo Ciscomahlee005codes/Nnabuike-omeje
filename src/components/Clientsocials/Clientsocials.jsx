@@ -1,5 +1,6 @@
 import React from "react";
 import "./Clientsocials.css";
+import Reveal from "../Reveal/Reveal";
 
 /**
  * Update this array with your real handles + links.
@@ -48,7 +49,8 @@ const platformMeta = {
 
 const Clientsocials = () => {
   return (
-    <section className="client-socials" id="client-socials">
+    <Reveal>
+       <section className="client-socials" id="client-socials">
       <div className="cs-eyebrow">
         <span className="cs-eyebrow-line"></span>
         My Social Handles
@@ -93,6 +95,7 @@ const Clientsocials = () => {
         })}
       </div>
     </section>
+    </Reveal>
   );
 };
 

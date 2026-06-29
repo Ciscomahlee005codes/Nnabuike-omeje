@@ -1,5 +1,6 @@
 import React from "react";
 import "./Experience.css";
+import Reveal from "../Reveal/Reveal";
 
 const experiences = [
   {
@@ -48,7 +49,8 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="experience" id="experience">
+    <Reveal>
+       <section className="experience" id="experience">
       <div className="sec-eyebrow exp-eyebrow">
         <span className="eyebrow-line-w"></span>
         Experience
@@ -83,6 +85,7 @@ const Experience = () => {
         ))}
       </div>
     </section>
+    </Reveal>
   );
 };
 

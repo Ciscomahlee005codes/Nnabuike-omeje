@@ -5,6 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa6";
 import Sam from "../../assets/omeje-2.jpeg";
+import Reveal from "../Reveal/Reveal";
 
 const roles = [
   "Content Writer",
@@ -49,7 +50,8 @@ const Hero = () => {
   }, [charIndex, deleting, roleIndex]);
 
   return (
-    <section className="hero" id="home">
+     <Reveal>
+      <section className="hero" id="home">
       {/* LEFT */}
       <div className="hero-left">
         <div className="hero-content">
@@ -109,6 +111,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+     </Reveal>
   );
 };
 
