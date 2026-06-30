@@ -3,13 +3,20 @@
 /* ── Tokens (mirror Navbar.css) ────────────────────────────────────────────── */
 :root {
   --navy:        #0B1F3A;
+  --navy-deep:   #071527;
   --navy-mid:    #132847;
   --navy-light:  #1C3558;
   --orange:      #F4600C;
   --orange-dark: #D44F08;
+  --steel:       #4A6080;
   --white:       #FFFFFF;
   --off-white:   #FDF8F4;
   --muted:       rgba(255, 255, 255, 0.55);
+  --line:        rgba(244, 96, 12, 0.4);
+
+  /* Background photo behind the hero. A dark, fairly low-contrast image
+     still works best, since the left third carries a heavier scrim. */
+  --hero-bg-image: url("../../assets/hero-2.jpg");
 }
 
 /* ================= HERO ================= */
@@ -17,35 +24,45 @@
 .hero {
   width: 100%;
   min-height: 100vh;
+  position: relative;
   display: flex;
   overflow: hidden;
-  padding-top: 76px;
+  padding-top: 80px;
+  background-color: var(--navy-deep);
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
 }
+
+/* No gradient overlay on the parent — an angled gradient can never line up
+   exactly with a straight vertical box edge across every viewport size,
+   which is why it looked soft. Instead .hero-left and .hero-right each carry
+   their own flat background-color below, so the seam between "scrim" and
+   "visible photo" is always exactly the real edge of the box — pixel-sharp
+   at any width, and immune to layout changes at each breakpoint. */
 
 /* ================= LEFT SIDE ================= */
 
 .hero-left {
   width: 52%;
-  min-height: calc(100vh - 76px);
-  background: var(--off-white);
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   padding: 5% 5% 5% 7%;
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
   position: relative;
   z-index: 2;
+  background-color: rgba(7, 21, 39, 0.95);
 }
 
-/* Vertical orange rule — the signature detail */
+/* Sharp orange edge marking the panel — the signature detail */
 .hero-left::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 12%;
-  height: 76%;
+  top: 14%;
+  height: 72%;
   width: 3px;
   background: var(--orange);
-  border-radius: 0 2px 2px 0;
 }
 
 .hero-content {
@@ -57,17 +74,18 @@
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  background: var(--navy);
-  color: var(--white);
+  gap: 8px;
+  background: rgba(244, 96, 12, 0.12);
+  border: 1px solid var(--line);
+  color: var(--off-white);
   font-family: "Inter", sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 0.35rem 0.9rem;
-  border-radius: 2px;
-  margin-bottom: 1.6rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 0;
+  margin-bottom: 1.8rem;
 }
 
 .hero-tag-dot {
@@ -87,15 +105,15 @@
 
 .hero-name {
   font-family: "Syne", sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   font-weight: 800;
-  line-height: 1.08;
-  color: var(--navy);
+  line-height: 1.06;
+  color: var(--white);
   letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.3rem;
+  text-transform: uppercase;
 }
 
-/* Accent the last name segment with orange */
 .hero-name .accent {
   color: var(--orange);
 }
@@ -106,12 +124,16 @@
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #4A6080;
-  letter-spacing: 0.04em;
+  color: var(--off-white);
+  letter-spacing: 0.06em;
   min-height: 28px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+}
+
+.hero-typed {
+  opacity: 0.85;
 }
 
 .hero-cursor {
@@ -132,10 +154,10 @@
 /* ================= DIVIDER ================= */
 
 .hero-divider {
-  width: 40px;
+  width: 44px;
   height: 2px;
   background: var(--orange);
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.7rem;
 }
 
 /* ================= DESCRIPTION ================= */
@@ -143,10 +165,10 @@
 .hero-description {
   font-family: "Inter", sans-serif;
   font-size: 0.88rem;
-  line-height: 1.8;
-  color: #4A6080;
-  max-width: 400px;
-  margin-bottom: 2.2rem;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 410px;
+  margin-bottom: 2.3rem;
 }
 
 /* ================= SOCIAL ICONS ================= */
@@ -160,14 +182,14 @@
 .social-icons a {
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(11, 31, 58, 0.18);
+  border: 1px solid rgba(253, 248, 244, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--navy);
+  color: var(--off-white);
   text-decoration: none;
   font-size: 1.05rem;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background 0.25s ease, border-color 0.25s ease,
               color 0.25s ease, transform 0.25s ease;
 }
@@ -180,33 +202,36 @@
 }
 
 /* ================= RIGHT SIDE ================= */
+/* No portrait here anymore — this side is the photo itself, framed with the
+   same sharp accents as before so it doesn't read as empty space. */
 
 .hero-right {
   flex: 1;
-  background: var(--navy);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: relative;
-  margin-left: -60px;
+  z-index: 2;
   overflow: hidden;
+  padding: 0 5% 4rem 0;
+  background-color: rgba(11, 31, 58, 0.15);
 }
 
-/* Subtle dot grid overlay */
+/* Subtle dot grid, kept light since the photo is doing the work now */
 .hero-right::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.06) 1px,
+    rgba(255, 255, 255, 0.05) 1px,
     transparent 1px
   );
   background-size: 32px 32px;
   pointer-events: none;
 }
 
-/* Orange diagonal slash accent — the hero's signature mark */
+/* Orange bracket accent — the section's signature mark, sitting on the photo */
 .hero-right::after {
   content: "";
   position: absolute;
@@ -214,9 +239,9 @@
   right: -30px;
   width: 200px;
   height: 200px;
-  border: 2px solid rgba(244, 96, 12, 0.22);
+  border: 2px solid rgba(244, 96, 12, 0.45);
   transform: rotate(20deg);
-  border-radius: 4px;
+  border-radius: 0;
   pointer-events: none;
 }
 
@@ -228,15 +253,15 @@
   font-family: "Inter", sans-serif;
   font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.22em;
+  color: rgba(253, 248, 244, 0.55);
   text-transform: uppercase;
   text-align: right;
   line-height: 1.8;
   pointer-events: none;
+  z-index: 3;
 }
 
-/* Orange bracket accent beside label */
 .hero-corner-label::before {
   content: "";
   position: absolute;
@@ -244,34 +269,7 @@
   top: 0;
   height: 100%;
   width: 2px;
-  background: rgba(244, 96, 12, 0.4);
-  border-radius: 1px;
-}
-
-/* IMAGE */
-.hero-image-wrapper {
-  width: 55%;
-  max-width: 340px;
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.hero-image-wrapper img {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  object-fit: contain;
-  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
-  animation: floatImage 5s ease-in-out infinite;
-}
-
-@keyframes floatImage {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-12px); }
+  background: var(--orange);
 }
 
 /* SCROLL CUE */
@@ -284,11 +282,12 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(253, 248, 244, 0.4);
   font-family: "Inter", sans-serif;
   font-size: 0.58rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  z-index: 3;
 }
 
 .hero-scroll-line {
@@ -319,23 +318,27 @@
   .hero-left {
     width: 100%;
     min-height: auto;
-    clip-path: none;
     padding: 4rem 8% 4rem;
+    /* Full-width now, so a 0.95 panel would blot out almost the whole photo.
+       Drop it down and lean on text-shadow for legibility instead. */
+    background-color: rgba(7, 21, 39, 0.78);
   }
 
   .hero-left::before {
     display: none;
   }
 
-  .hero-right {
-    width: 100%;
-    min-height: 55vh;
-    margin-left: 0;
+  .hero-name,
+  .hero-role,
+  .hero-description {
+    text-shadow: 0 2px 14px rgba(7, 21, 39, 0.9);
   }
 
-  .hero-name { font-size: 2.2rem; }
-
-  .hero-image-wrapper { width: 50%; }
+  .hero-right {
+    width: 100%;
+    min-height: 40vh;
+    background-color: rgba(11, 31, 58, 0.08);
+  }
 }
 
 /* ================= MOBILE ================= */
@@ -359,12 +362,13 @@
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 480px) {
-  .hero-right {
-    display: none;
+  .hero-left {
+    min-height: auto;
+    background-color: rgba(7, 21, 39, 0.7);
   }
 
-  .hero-left {
-    min-height: calc(100vh - 76px);
+  .hero-right {
+    min-height: 24vh;
   }
 
   .hero-name { font-size: 1.75rem; }

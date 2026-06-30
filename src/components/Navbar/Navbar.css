@@ -3,20 +3,24 @@
 /* ── Design tokens ─────────────────────────────────────────────────────────── */
 :root {
   --navy:        #0B1F3A;
+  --navy-deep:   #071527;
   --navy-mid:    #132847;
   --navy-light:  #1C3558;
   --orange:      #F4600C;
   --orange-dark: #D44F08;
+  --steel:       #4A6080;
   --white:       #FFFFFF;
   --off-white:   #FDF8F4;
   --muted:       rgba(255, 255, 255, 0.55);
+  --line:        rgba(244, 96, 12, 0.4);
 }
 
 /* ================= NAVBAR ================= */
+/* Default: solid white. On scroll: flips to navy. Sharp, zero radius. */
 
 .navbar {
   width: 100%;
-  height: 76px;
+  height: 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,15 +29,17 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  transition: background 0.35s ease, height 0.35s ease, box-shadow 0.35s ease;
+  background: var(--white);
+  border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+  transition: background 0.3s ease, height 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-scrolled {
-  height: 68px;
-  background: rgba(11, 31, 58, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 1px 0 rgba(244, 96, 12, 0.18);
+  height: 64px;
+  background: var(--navy-deep);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(7, 21, 39, 0.25);
 }
 
 /* ================= LOGO ================= */
@@ -41,36 +47,55 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   text-decoration: none;
 }
 
+/* Sharp split-diamond mark: navy/orange diagonal, zero curve */
 .logo-mark {
-  width: 34px;
-  height: 34px;
-  background: var(--orange);
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 36px;
+  height: 36px;
+  position: relative;
   flex-shrink: 0;
-  transition: background 0.3s ease;
+  background: var(--navy);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+}
+
+.logo-mark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  clip-path: polygon(100% 0, 100% 100%, 35% 100%);
+  transition: clip-path 0.3s ease;
+}
+
+.logo:hover .logo-mark::before {
+  clip-path: polygon(100% 0, 100% 100%, 0% 100%);
 }
 
 .logo-mark span {
+  position: relative;
+  z-index: 2;
   font-family: "Syne", sans-serif;
   font-size: 14px;
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .logo-text {
   font-family: "Syne", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 0.18em;
   color: var(--navy);
   text-transform: uppercase;
   transition: color 0.3s ease;
@@ -85,18 +110,20 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 0.25rem;
 }
 
 .nav-links a {
   font-family: "Inter", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 600;
   color: var(--navy);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   position: relative;
+  padding: 0.6rem 1.05rem;
+  isolation: isolate;
   transition: color 0.25s ease;
 }
 
@@ -104,23 +131,23 @@
   color: var(--muted);
 }
 
-.nav-links a::after {
+/* Sharp fill-swipe: a skewed orange slab sweeps in behind the label */
+.nav-links a::before {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0%;
-  height: 1.5px;
+  inset: 0;
   background: var(--orange);
-  transition: width 0.3s ease;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover::before {
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
 }
 
 .nav-links a:hover {
-  color: var(--orange);
+  color: var(--white);
 }
 
 .navbar-scrolled .nav-links a:hover {
@@ -130,32 +157,29 @@
 /* ================= CONTACT BUTTON ================= */
 
 .contact-btn {
-  background: var(--orange) !important;
-  color: var(--white) !important;
-  padding: 0.6rem 1.4rem !important;
-  border-radius: 3px !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.12em !important;
-  transition: background 0.3s ease, transform 0.2s ease !important;
+  background: transparent !important;
+  border: 1.5px solid var(--orange) !important;
+  color: var(--navy) !important;
+  padding: 0.55rem 1.3rem !important;
+  border-radius: 0 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.14em !important;
+  margin-left: 0.75rem;
+  transition: background 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease !important;
 }
 
-.contact-btn::after {
+.contact-btn::before {
   display: none !important;
 }
 
-.contact-btn:hover {
-  background: var(--orange-dark) !important;
-  transform: translateY(-2px) !important;
+.navbar-scrolled .contact-btn {
   color: var(--white) !important;
 }
 
-.navbar-scrolled .contact-btn {
+.contact-btn:hover {
   background: var(--orange) !important;
   color: var(--white) !important;
-}
-
-.navbar-scrolled .contact-btn:hover {
-  background: var(--orange-dark) !important;
 }
 
 /* ================= HAMBURGER / CLOSE ================= */
@@ -167,25 +191,22 @@
   align-items: center;
   cursor: pointer;
   padding: 4px;
-  /* FIX: explicit position + fixed size so absolute children are contained */
   position: relative;
   z-index: 2000;
   width: 32px;
   height: 32px;
 }
 
-/* The three bars — all sit in normal flow when closed */
 .menu-icon span {
   display: block;
   width: 24px;
-  height: 1.5px;
+  height: 2px;
   background: var(--navy);
-  border-radius: 1px;
+  border-radius: 0;
   transition: transform 0.35s cubic-bezier(0.77, 0, 0.18, 1),
               opacity   0.25s ease,
               background 0.3s ease;
   transform-origin: center;
-  /* FIX: give each span a margin so they stack correctly in normal flow */
   margin: 3px 0;
 }
 
@@ -194,9 +215,9 @@
   background: var(--white);
 }
 
-/* FIX: use translate-based centering so spans stay visible */
 .menu-icon.open span:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
+  background: var(--orange);
 }
 
 .menu-icon.open span:nth-child(2) {
@@ -206,6 +227,7 @@
 
 .menu-icon.open span:nth-child(3) {
   transform: translateY(-7.5px) rotate(-45deg);
+  background: var(--orange);
 }
 
 /* ================= MOBILE DRAWER ================= */
@@ -214,9 +236,9 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 270px;
+  width: 280px;
   height: 100vh;
-  background: var(--navy);
+  background: var(--navy-deep);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,7 +247,7 @@
   padding: 0 2.5rem;
   transition: right 0.45s cubic-bezier(0.77, 0, 0.18, 1);
   z-index: 1500;
-  border-left: 1px solid rgba(244, 96, 12, 0.3);
+  border-left: 1px solid var(--line);
 }
 
 .mobile-drawer.open {
@@ -238,22 +260,26 @@
   font-weight: 600;
   color: var(--muted);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0;
 }
 
 .mobile-drawer a:hover {
   color: var(--white);
+  border-left-color: var(--orange);
+  padding-left: 10px;
 }
 
 .mobile-drawer .contact-btn {
-  background: var(--orange) !important;
+  border-color: var(--orange) !important;
   color: var(--white) !important;
 }
 
 .mobile-drawer .contact-btn:hover {
-  background: var(--orange-dark) !important;
+  background: var(--orange) !important;
 }
 
 /* ================= OVERLAY ================= */
@@ -261,7 +287,7 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(11, 31, 58, 0.6);
+  background: rgba(7, 21, 39, 0.65);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   z-index: 1400;
